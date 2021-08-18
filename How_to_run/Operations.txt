@@ -1,0 +1,156 @@
+INSERT/UPDATE/DELETE OPERATIONS
+-------------------------------
+
+
+IMPORTANT NOTE:
+----------------
+If you want an efficient database app, you should make an "insert" operation considering the following order.
+
+customer -> customerphonenumber -> PetCharacteristic -> Pet ->  Service -> Invoice -> Needs -> Vet -> Provides
+ 
+
+-Also you cannot update IDs in all tables because these IDs are unique.(Only insert and delete)
+
+
+Customer table
+-----------------
+Insert
+------
+-You can insert data by entering all necessary data (custID cannot be duplicate if its duplicate you cannot add new customer)
+
+-You can update data which you want after you enter custID 
+
+-You can delete the entire row which you want entering just the custID.
+(Be careful - If you delete a customer, the rows related to this customer are also deleted in other tables that are linked to this customer.)
+
+
+
+Customer Phone Table 
+--------------------------
+-You can insert data by entering all necessary data (Phone number and custID cannot be duplicate if its duplicate you cannot add new phone number)
+
+-You can update the phone number which you want to update by typing in the Customer ID section and then typing the new phone number below.
+
+-You can delete the entire row which you want entering just the custID and the phone number you want to delete.
+
+
+
+
+Pet characteristics Table
+---------------------------
+-You can insert data by entering all necessary data (petCharID cannot be duplicate if its duplicate you cannot add new pet characteristics)
+
+-You can update data which you want after you enter petCharID.
+
+-You can delete the entire row which you want entering just the petCharID.
+(Be careful - If you delete a petchar, the rows related to this petchar are also deleted in other tables that are linked to this petchar with FK.Because if there is no petchar, there is no pet anyway)
+
+
+
+
+Pet table
+-----------
+-You can insert data by entering all necessary data (petID , custID and petCharID cannot be duplicate if its duplicate you cannot add new pet)
+
+-You can update data which you want after you enter petID , custID and petCharID
+
+-You can delete the entire row which you want entering just the petID.
+(Be careful - If you delete a pet , the rows related to this pet are also deleted in other tables that are linked to this pet with FK.)
+
+
+
+
+Service Table
+---------------
+-You can insert data by entering all necessary data (serviceID , custID and Reservation Date cannot be duplicate if its duplicate you cannot add new service)
+
+-You can update data which you want after you enter serviceID and custID.
+
+-You can delete the entire row which you want entering just the serviceID.
+(Be careful - If you delete a service , the rows related to this service are also deleted in other tables that are linked to this service with FK.)
+
+
+
+Invoice Table
+--------------
+-You can insert data by entering all necessary data (invoiceID , serviceID and custID cannot be duplicate if its duplicate you cannot add new invoice)
+
+-You can update data which you want after you enter incoiceID, serviceID and custID
+
+-You can delete the entire row which you want entering just the invoiceID.
+(Be careful - If you delete a invoice , the rows related to this invoice are also deleted in other tables that are linked to this invoice with FK.)
+
+
+
+Vet Table
+----------
+-You can insert data by entering all necessary data (vetID and vet email cannot be duplicate if its duplicate you cannot add new vet)
+
+-You can update data which you want after you enter vetID
+
+-You can delete the entire row which you want entering just the vetID.
+(Be careful - If you delete a vet , the rows related to this vet are also deleted in other tables that are linked to this vet with FK.)
+
+
+
+--------------------------------------------------------------------------------------------------------------
+-We have needs and provides tables to be used in cases such as appointment cancellations or updates.**
+--------------------------------------------------------------------------------------------------------------
+
+Needs
+----------
+-You can insert data by entering all necessary data (Note that the services and pets you want to insert should already be in the database and avoid from dublicates)
+
+-You can update de service that taken by pet(s). If the entire provides table row is wrong you can simply delete entire row and insert new provides table row.Because there is just two clomns in this table.
+
+-You can delete the entire row which you want entering just the petID and serviceID.
+(In this table, you can delete data in tables connected with a foreign key. The data in the tables to which it is linked are not affected.)
+
+
+
+Provides
+--------
+
+-You can insert data by entering all necessary data (Note that the services and vets you want to insert should already be in the database and avoid from dublicates)
+
+-You can update de service that provided by vet(s). If the entire provides table row is wrong you can simply delete entire row and insert new provides table row.Because there is just two clomns in this table.
+
+-You can delete the entire row which you want entering just the vetID and serviceID.
+(In this table, you can delete data in tables connected with a foreign key. The data in the tables to which it is linked are not affected.)
+
+
+
+
+NOTE:
+-----
+Our database has ON DELETE CASCADE and ON UPDATE CASCADE criterias. With this way we made more efficient Database.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

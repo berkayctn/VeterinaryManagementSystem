@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.vms.vetController">
+    <top>
+        <HBox prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: #d2d4c8;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="60.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/VMSLogo.png" />
+                    </image></ImageView>
+                <Region prefHeight="60.0" prefWidth="690.0" />
+                <Button mnemonicParsing="false" onAction="#ChangeUserButtonClicked" prefHeight="40.0" prefWidth="130.0" text="Change User">
+                    <HBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Customer">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="2.0" layoutY="1.0" prefHeight="410.0" prefWidth="170.0" spacing="15.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TextField fx:id="custID" promptText="Customer ID">
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="cusFName" promptText="First Name" />
+                                        <TextField fx:id="cusLName" promptText="Last Name" />
+                                        <Region prefHeight="197.0" prefWidth="159.0">
+                                            <opaqueInsets>
+                                                <Insets />
+                                            </opaqueInsets>
+                                        </Region>
+                                        <Button mnemonicParsing="false" onAction="#cusInsertClicked" prefWidth="160.0" text="Insert" />
+                                        <Button mnemonicParsing="false" onAction="#cusUpdateClicked" prefWidth="160.0" text="Update" />
+                                        <Button mnemonicParsing="false" onAction="#cusDeleteClicked" prefWidth="160.0" text="Delete">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </VBox>
+                                <TableView fx:id="customerTableView" layoutX="170.0" layoutY="5.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="custIDTableColumn" minWidth="270.0" prefWidth="75.0" text="custID" />
+                                        <TableColumn fx:id="fNameTableColumn" minWidth="270.0" prefWidth="75.0" text="fName" />
+                                        <TableColumn fx:id="lNameTableColumn" minWidth="270.0" prefWidth="75.0" text="lName" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Customer Phone">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="410.0" prefWidth="170.0" spacing="15.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TextField fx:id="customerPhoneCustId" promptText="Customer ID (Phone Num)">
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                                        </TextField>
+                                        <TextField fx:id="customerPhonePhoneNum" promptText="Customer Phone Number" />
+                                        <Region prefHeight="246.0" prefWidth="159.0" />
+                                        <Button mnemonicParsing="false" onAction="#insertInToCustomerPhone" prefWidth="160.0" text="Insert" />
+                                        <Button mnemonicParsing="false" onAction="#updateInToCustomerPhone" prefWidth="160.0" text="Update" />
+                                        <Button mnemonicParsing="false" onAction="#deleteInToCustomerPhone" prefWidth="160.0" text="Delete" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </VBox>
+                                <TableView fx:id="customerPhoneTableView" layoutX="249.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="customerPhoneCustIdColumn" minWidth="405.0" prefWidth="75.0" text="custID" />
+                                        <TableColumn fx:id="customerPhoneNumberColumn" minWidth="405.0" prefWidth="75.0" text="cusPhoneNumber" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Pet Characteristics">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="410.0" prefWidth="170.0" spacing="15.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TextField fx:id="petCharTablePetCharIdTextFiled" promptText="Pet Characteristics ID">
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="petCharTablePetHeightTextFiled" promptText="Pet Height" />
+                                        <TextField fx:id="PetCharTablePetWeightTextFiled" promptText="Pet Weight" />
+                                        <TextField fx:id="petCharTablePetLengthTextFiled" promptText="Pet Lenght" />
+                                        <Region prefHeight="105.0" prefWidth="159.0" />
+                                        <Button mnemonicParsing="false" onAction="#insertIntoPetCharacteristics" prefWidth="160.0" text="Insert" />
+                                        <Button layoutX="15.0" layoutY="269.0" mnemonicParsing="false" onAction="#updateFromPetCharacteristics" prefWidth="160.0" text="Update" />
+                                        <Button layoutX="15.0" layoutY="310.0" mnemonicParsing="false" onAction="#deleteFromPetCharacteristics" prefWidth="160.0" text="Delete" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </VBox>
+                                <TableView fx:id="petCharTableView" layoutX="210.0" layoutY="39.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="petCharacteristicIdColumn" minWidth="202.0" prefWidth="75.0" text="petCharID" />
+                                        <TableColumn fx:id="petHeightColumn" minWidth="202.0" prefWidth="75.0" text="petHeight" />
+                                        <TableColumn fx:id="petWeightColumn" minWidth="202.0" prefWidth="75.0" text="petWeight" />
+                                        <TableColumn fx:id="petLengthColumn" minWidth="202.0" prefWidth="75.0" text="petLenght" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Pet">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="410.0" prefWidth="170.0" spacing="10.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TextField fx:id="petTablePetIdTextFiled" promptText="Pet ID">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="petTableCustIdTextFiled" layoutX="10.0" layoutY="10.0" promptText="Customer ID" />
+                                        <TextField fx:id="petTablePetCharIdTextFiled" layoutX="10.0" layoutY="35.0" promptText="Pet Characteristics ID" />
+                                        <TextField fx:id="petTablePetBirthDateTextFiled" promptText="Pet Birth Date" />
+                                        <TextField fx:id="petTablePetGenderTextFiled" promptText="Pet Gender" />
+                                        <TextField fx:id="petTablePetTypeTextFiled" promptText="Pet Type" />
+                                        <TextField fx:id="petTableAdoptionDateTextFiled" promptText="Adoption Date" />
+                                        <Region prefHeight="55.0" prefWidth="159.0" />
+                                        <Button mnemonicParsing="false" onAction="#insertInToPet" prefWidth="160.0" text="Insert" />
+                                        <Button layoutX="10.0" layoutY="255.0" mnemonicParsing="false" onAction="#updateFromPet" prefWidth="160.0" text="Update">
+                                            <VBox.margin>
+                                                <Insets top="5.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Button layoutX="10.0" layoutY="280.0" mnemonicParsing="false" onAction="#deleteFromPet" prefWidth="160.0" text="Delete">
+                                            <VBox.margin>
+                                                <Insets top="5.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </VBox>
+                                <TableView fx:id="petTableView" layoutX="223.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="petTableIdColumn" minWidth="115.0" prefWidth="75.0" text="petID" />
+                                        <TableColumn fx:id="petTableCustIdColumn" minWidth="115.0" prefWidth="75.0" text="custID" />
+                                        <TableColumn fx:id="petTableCharIdColumn" minWidth="115.0" prefWidth="75.0" text="petCharID" />
+                                        <TableColumn fx:id="petTableBirthDateColumn" minWidth="115.0" prefWidth="75.0" text="petBirthDate" />
+                                        <TableColumn fx:id="petTableGenderColumn" minWidth="115.0" prefWidth="75.0" text="petGender" />
+                                        <TableColumn fx:id="petTableTypeColumn" minWidth="115.0" prefWidth="75.0" text="petType" />
+                                        <TableColumn fx:id="petTableadoptionDateColumn" minWidth="115.0" prefWidth="75.0" text="adoptionDate" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Service">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="410.0" prefWidth="170.0" spacing="15.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                    <children>
+                                        <TextField fx:id="serviceTableServiceIdTextField" promptText="Service ID">
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="serviceTableCustomerIdTextField" promptText="Customer ID" />
+                                        <TextField fx:id="serviceTableReservationDateTextField" promptText="Reservation Date" />
+                                        <TextField fx:id="serviceTableServiceTypeTextField" promptText="Service Type" />
+                                        <TextField fx:id="serviceTableServiceDescTextField" prefHeight="60.0" promptText="Service Description" />
+                                        <Region prefHeight="22.0" prefWidth="159.0" />
+                                        <Button mnemonicParsing="false" onAction="#insertIntoService" prefWidth="160.0" text="Insert" />
+                                        <Button layoutX="15.0" layoutY="303.0" mnemonicParsing="false" onAction="#updateFromService" prefWidth="160.0" text="Update" />
+                                        <Button layoutX="15.0" layoutY="344.0" mnemonicParsing="false" onAction="#deleteFromService" prefWidth="160.0" text="Delete" />
+                                    </children>
+                                </VBox>
+                                <TableView fx:id="serviceTableView" layoutX="208.0" layoutY="36.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="sTableServiceIDColumn" minWidth="162.0" prefWidth="75.0" text="serviceID" />
+                                        <TableColumn fx:id="sTableCustIdColumn" minWidth="162.0" prefWidth="75.0" text="custID" />
+                                        <TableColumn fx:id="sTableRdateColumn" minWidth="162.0" prefWidth="75.0" text="rDate" />
+                                        <TableColumn fx:id="sTableServiceTypeColumn" minWidth="162.0" prefWidth="75.0" text="serviceType" />
+                                        <TableColumn fx:id="sTableServiceDescColumn" minWidth="162.0" prefWidth="75.0" text="serviceDesc" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Invoıce">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="410.0" prefWidth="170.0" spacing="15.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TextField fx:id="invoiceId" promptText="Incoice ID">
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="invoiceServiceId" promptText="Service ID" />
+                                        <TextField fx:id="invoiceCustomerId" promptText="Customer ID" />
+                                        <TextField fx:id="invoicePaymentMethod" promptText="Payment Method" />
+                                        <TextField fx:id="invoicePaymentDate" promptText="Payment Date" />
+                                        <TextField fx:id="invoiceCost" promptText="Cost" />
+                                        <Region prefHeight="80.0" prefWidth="170.0" />
+                                        <Button mnemonicParsing="false" onAction="#isertInToInvoice" prefWidth="160.0" text="Insert" />
+                                        <Button mnemonicParsing="false" onAction="#updateFromInvoice" prefWidth="160.0" text="Update" />
+                                        <Button mnemonicParsing="false" onAction="#deleteFromInvoice" prefWidth="160.0" text="Delete" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </VBox>
+                                <TableView fx:id="invoiceTableView" layoutX="234.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="invoiceIdColumn" minWidth="135.0" prefWidth="75.0" text="invoiceID" />
+                                        <TableColumn fx:id="invoiceServiceIdColumn" minWidth="135.0" prefWidth="75.0" text="serviceID" />
+                                        <TableColumn fx:id="invoiceCustIdColumn" minWidth="135.0" prefWidth="75.0" text="custID" />
+                                        <TableColumn fx:id="invoicePaymentMethodColumn" minWidth="135.0" prefWidth="75.0" text="paymentMethod" />
+                                        <TableColumn fx:id="incoicePaymentDateColumn" minWidth="135.0" prefWidth="75.0" text="paymentDate" />
+                                        <TableColumn fx:id="invoiceCostColumn" minWidth="135.0" prefWidth="75.0" text="cost" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Needs">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="410.0" prefWidth="170.0" spacing="15.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TextField fx:id="needsTableCustomerPetIdTextFiled" promptText="Pet ID(Service ID for Update)">
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="needsTablePetServiceIdTextFiled" promptText="Service ID" />
+                                        <Region prefHeight="188.0" prefWidth="159.0" />
+                                        <Button mnemonicParsing="false" onAction="#insertInToNeeds" prefWidth="160.0" text="Insert" />
+                                        <Button layoutX="10.0" layoutY="261.0" mnemonicParsing="false" onAction="#updateInToNeeds" prefWidth="160.0" text="Update" />
+                                        <Button layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#deleteInToNeeds" prefWidth="160.0" text="Delete" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </VBox>
+                                <TableView fx:id="needsTableView" layoutX="213.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="needsPetIdColumn" minWidth="405.0" prefWidth="75.0" text="petID" />
+                                        <TableColumn fx:id="needsServiceIdColumn" minWidth="405.0" prefWidth="75.0" text="serviceID" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Vet">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="410.0" prefWidth="170.0" spacing="10.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                    <children>
+                                        <TextField fx:id="vetTableVetIdTextFiled" promptText="Vet ID" />
+                                        <TextField fx:id="vetTableFnameTextFiled" promptText="First Name" />
+                                        <TextField fx:id="vetTableLnameIdTextFiled" promptText="Last Name" />
+                                        <TextField fx:id="vetTableVetEmailTextFiled" promptText="Vet E-Mail" />
+                                        <TextField fx:id="vetTableVetAddressTextFiled" promptText="Vet Address" />
+                                        <TextField fx:id="vetTableVetWorkPhoneTextFiled" promptText="Vet Work Phone Number" />
+                                        <TextField fx:id="vetTableVetPositionTextFiled" promptText="Vet Position" />
+                                        <TextField fx:id="vetTableVetQualificationTextFiled" promptText="Vet Qualification" />
+                                        <Region prefHeight="49.0" prefWidth="159.0" />
+                                        <Button mnemonicParsing="false" onAction="#insertInToVet" prefWidth="160.0" text="Insert" />
+                                        <Button layoutX="15.0" layoutY="308.0" mnemonicParsing="false" onAction="#updateFromVet" prefWidth="160.0" text="Update">
+                                            <VBox.margin>
+                                                <Insets top="5.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Button layoutX="15.0" layoutY="343.0" mnemonicParsing="false" onAction="#deleteFromVet" prefWidth="160.0" text="Delete">
+                                            <VBox.margin>
+                                                <Insets top="5.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <TableView fx:id="vetTableView" layoutX="255.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="vTableVetIdColumn" minWidth="20.0" prefWidth="75.0" text="vetID" />
+                                        <TableColumn fx:id="vTableFnameColumn" minWidth="30.0" prefWidth="75.0" text="fName" />
+                                        <TableColumn fx:id="vTableLnameColumn" minWidth="30.0" prefWidth="75.0" text="lName" />
+                                        <TableColumn fx:id="vTableVetEmailColumn" maxWidth="101.0" minWidth="140.0" prefWidth="75.0" text="vetEmail" />
+                                        <TableColumn fx:id="vTableVetAddressColumn" maxWidth="101.0" minWidth="140.0" prefWidth="75.0" text="vetAddress" />
+                                        <TableColumn fx:id="vTableVetWorkPhoneColumn" maxWidth="101.0" minWidth="101.0" prefWidth="75.0" text="vetWorkPhone" />
+                                        <TableColumn fx:id="vTableVetPositionColumn" maxWidth="101.0" minWidth="101.0" prefWidth="75.0" text="vetPosition" />
+                                        <TableColumn fx:id="vTableVetQualificationColumn" minWidth="101.0" prefWidth="75.0" text="vetQualification" />
+                                    </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Provides">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="410.0" prefWidth="170.0" spacing="15.0" style="-fx-background-color: #d2d4c8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TextField fx:id="providesTableVetIdTextArea" promptText="Vet ID(Service ID for Update)">
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="providesTableServiceIdTextArea" promptText="Service ID" />
+                                        <Region prefHeight="190.0" prefWidth="159.0" />
+                                        <Button mnemonicParsing="false" onAction="#insertInToProvides" prefWidth="160.0" text="Insert" />
+                                        <Button layoutX="10.0" layoutY="261.0" mnemonicParsing="false" onAction="#updateInToProvides" prefWidth="160.0" text="Update" />
+                                        <Button layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#deleteInToProvides" prefWidth="160.0" text="Delete" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </VBox>
+                                <TableView fx:id="providesTableView" layoutX="189.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="providesTableVetIdColumn" minWidth="405.0" prefWidth="75.0" text="vetID" />
+                                        <TableColumn fx:id="providesTableServiceIdColumn" minWidth="405.0" prefWidth="75.0" text="serviceID" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox alignment="BOTTOM_CENTER" prefHeight="20.0" prefWidth="980.0" style="-fx-background-color: #d2d4c8;" BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Veterinary Management System">
+                    <font>
+                        <Font name="Bodoni MT Bold Italic" size="15.0" />
+                    </font>
+                </Text>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

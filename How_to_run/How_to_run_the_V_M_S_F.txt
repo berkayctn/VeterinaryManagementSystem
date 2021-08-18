@@ -1,0 +1,29 @@
+	Before running the program. 
+
+	First of all you have to modify the Connect.java class which is placed in src/main/java/JDBC/Connect.java
+ in this class database connection properties are given. Change those properties to fit your database.(Like your localhost password and port number(THIS IS IMPORTANT!)
+
+	Implement the database by using VMSDBSQL.SQL file it is placed in src/main/vmsDB/VMSDBSQL.SQL
+		or you can simply add our updated veterinary_management_system(final).sql file (from Phase2) to XAMPP , MySQL Workbench etc..
+
+ 	You don’t need to add vm options or external libraries. JavaFX and MYSQL Connector/J is implemented 
+via Maven, in the indexing phase those libraries will be downloaded automatically. 
+	
+	 
+
+					How to run the program (3 different ways)?
+
+	1)	By opening the V_M_S_F file in an IDE (IntelliJ or Eclipse) basically press the run button.
+
+	2)	In IntelliJ at the right there is a tab called Maven by opening it you will reveal 3 packages. 
+		Open the Plugins then the javafx package after that double click the javafx:run 
+
+
+	3)	By using CMD (Terminal) go into the path of V_M_S_F package and run the following command
+ 					  mvn clean install package javafx:run 
+
+
+----You can check operation.txt for implement required operations on our DBMS.***
+
+
+ 	
