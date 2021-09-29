@@ -1,4 +1,4 @@
-# VeterinaryManagementSystem
+# My First Database App
 A fully-working veterinary management system which is written in Java.
 * MySQL was used to process the data.
 * Interface was created with using javaFX.
