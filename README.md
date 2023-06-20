@@ -1,10 +1,10 @@
 # My First Database App
-A fully-working veterinary management system which is written in Java.
+A fully functional veterinary management system written in Java.
 * MySQL was used to process the data.
-* Interface was created using javaFX.
-* Maven was used for an easier usage.
+* The interface was created using JavaFX.
+* Maven was used for easier usage.
 
-It's based on a statement of work, developed first its own database and then application. Its database has enough good mock data.
+It is based on a statement of work, first developing its own database and then the application. The database contains sufficient and realistic mock data.
 
 
 
