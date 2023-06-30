@@ -46,12 +46,17 @@ via Maven, in the indexing phase those libraries will be downloaded automaticall
  3 different ways to run the project
 
 1. By opening the V_M_S_F file in an IDE (IntelliJ or Eclipse) basically press the run button.
+   
    ![](assets/way-1.png)
+   
 2. In IntelliJ at the right there is a tab called Maven by opening it you will reveal 3 packages.
    n the Plugins then the javafx package after that double click the `javafx:run`
+   
    ![](assets/way-2.png)
+   
 3. By using CMD (Terminal) go into the path of V_M_S_F package and run the following command
    ``mvn clean install package javafx:run``
+   
    ![](assets/way-3.png)
 
 ## Database Design
