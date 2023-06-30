@@ -11,19 +11,19 @@ It is based on a statement of work, first developing its own database and then t
 Upon initiating the program, the user is greeted by a selection screen that offers two options. The first option allows the user to access the database as a Veterinarian, while the second option enables them to view the database as a Customer.
 ![](assets/img.png)
 
-If the user selects the Customer button a screen as follows opens.
+If the user selects the "Customer" button, a screen corresponding to their selection will be displayed.
 
-By writing your customer id and clicking the inquire button our customer can view his/her past reservations and up coming ones.
+By entering your customer ID and clicking the "Inquire" button, you will be able to view your past reservations as well as upcoming ones.
 
-In My invoices section the same logic and the same interface was implemented. If the user enters his/her customer id the system checks the database specially invoice table to find invoices for this specific customer.
+In the "My Invoices" section, the same logic and interface have been implemented. When the user enters their customer ID, the system performs a database query, specifically targeting the invoice table, to retrieve invoices associated with that particular customer.
 ![](assets/img_1.png)
 
-If the interface user selects view the database as Veterinarian user goes to a login screen. To log in this section, the user must be veterinarian. The email and the password (Vet Work Phone) of user must be in the database after checking the validness of the information that is entered then the user can view this section of the interface. Also, under the button we have a label that tells us the status of the database connection.
+If the interface user selects "View the Database" as a veterinarian user, they will be directed to a login screen. To access this section, the user must be a veterinarian. The user is required to enter their email and password (Vet Work Phone), which will be validated against the information stored in the database. If the entered information is valid, the user will be granted access to this section of the interface. Additionally, below the login button, there is a label that indicates the status of the database connection.
 ![](assets/img_2.png)
 
-After logging in to the veterinary interface we can view our database with all the tables. Tables are added into tabs named as same as table names in our database. The information in our database printed into the interface using Table View and Table Column attributes.
+Once logged into the veterinary interface, veterinarians have the ability to view the database, which contains various tables. These tables are presented as tabs within the interface, with each tab named after the corresponding table in the database. The information stored in the database is displayed in the interface using the Table View and Table Column attributes, allowing veterinarians to easily navigate and interact with the data.
 
-Veterinarian can also manipulate the date in our database by using insert, update and delete functionality.
+In addition to viewing the database, veterinarians in our system have the capability to manipulate data using the insert, update, and delete functionalities. This allows them to add new records to the database using the insert operation, modify existing records using the update operation, and remove unwanted records using the delete operation. These functionalities provide veterinarians with the flexibility to manage and maintain the data in the database according to their specific needs and requirements.
 ![](assets/img_3.png)
 
 ## How to run?
