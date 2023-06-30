@@ -32,16 +32,15 @@ In addition to viewing the database, veterinarians in our system have the capabi
 
 ## How to run?
 
-Before running the program.
+Before running the program, please make the following modifications:
 
-First of all you have to modify the Connect.java class which is placed in src/main/java/JDBC/Connect.java
-in this class database connection properties are given. Change those properties to fit your database.(Like your localhost password and port number(THIS IS IMPORTANT!)
+1. Open the `Connect.java` class located at `src/main/java/JDBC/Connect.java`. In this class, you will find the database connection properties. Modify these properties to match your database configuration. Make sure to update the localhost, password, and port number accordingly. This step is crucial for establishing a successful connection.
 
-Implement the database by using VMSDBSQL.SQL file it is placed in `src/main/vmsDB/VMSDBSQL.SQL`
-or you can simply add our updated veterinary_management_system(final).sql file (from Phase2) to XAMPP , MySQL Workbench etc..
+2. Implement the database by using the `VMSDBSQL.SQL` file. You can find this file in the `src/main/vmsDB/` directory. You can either execute this SQL file directly in your preferred database management tool (e.g., XAMPP, MySQL Workbench) or import the updated `veterinary_management_system(final).sql` file from Phase 2. This will create the necessary tables and populate them with sample data for the Veterinary Management System.
 
-You don’t need to add vm options or external libraries. JavaFX and MYSQL Connector/J is implemented
-via Maven, in the indexing phase those libraries will be downloaded automatically.
+3. You don't need to add any VM options or external libraries manually. JavaFX and MySQL Connector/J are implemented via Maven, and during the indexing phase, these libraries will be automatically downloaded and managed.
+
+Once you have completed these steps, you should be ready to run the program.
 
  3 different ways to run the project
 
