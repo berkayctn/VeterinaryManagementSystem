@@ -8,8 +8,7 @@ It is based on a statement of work, first developing its own database and then t
 
 ## Overview
 
-When we start the program, the user selection screen welcomes us.In this screen we have two options.
-First one is viewing the database as Veterinarian and the second, option is to view the database as Customer.
+Upon initiating the program, the user is greeted by a selection screen that offers two options. The first option allows the user to access the database as a Veterinarian, while the second option enables them to view the database as a Customer.
 ![](assets/img.png)
 
 If the user selects the Customer button a screen as follows opens.
